@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="com.wx.iseeweather.GetPressurePlugin"
+  version="1.0.0">
+
+  <name>GetPressurePlugin</name>
+  <description>Gets the pressure from compatible Android devices.</description>
+
+  <js-module src="www/GetPressurePlugin.js" name="GetPressurePlugin">
+        <clobbers target="navigator.GetPressurePlugin" />
+  </js-module>
+
+<!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="GetPressure">
+        <param name="android-package" value="com.wx.iseeweather.GetPressurePlugin.GetPressure" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/GetPressure.java" target-dir="src/com/wx/iseeweather" />
+  </platform>
+
+
+</plugin>
